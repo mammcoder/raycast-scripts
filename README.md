@@ -15,12 +15,14 @@
 | `gitlab bonuses`   | —      | `gitlab-bonuses.sh`   |
 | `gitlab chat`      | —      | `gitlab-chat.sh`      |
 | `gitlab couriers`  | —      | `gitlab-couriers.sh`  |
+| `gitlab schedules` | —      | `gitlab-schedules.sh` |
 | -                  |        |                       |
 | `jenkins delivery` | —      | `jenkins-delivery.sh` |
 | `jenkins rewards`  | —      | `jenkins-rewards.sh`  |
 | `jenkins barriers` | —      | `jenkins-barriers.sh` |
 | `jenkins bonuses`  | —      | `jenkins-bonuses.sh`  |
 | `jenkins chat`     | —      | `jenkins-chat.sh`     |
+| `jenkins schedules | —      | `jenkins-schedules.sh`|
 | -                  |        |                       |
 | `log test`         | `lt`   | `log-test.sh`         |
 | `log prod`         | `lp`   | `log-prod.sh`         |

@@ -6,6 +6,6 @@
 # @raycast.mode silent
 
 # Optional parameters:
-# @raycast.icon 🗃️
+# @raycast.icon 👴🏻
 
 "$(dirname "$0")/lib/open-or-focus.sh" "https://gitlab-vv.vkusvill.ru/automacon/mssql-databases/couriers/-/merge_requests"
