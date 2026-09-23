@@ -1,7 +1,7 @@
 #!/bin/bash
 # open-or-focus.sh <url> [match...]
 #
-# If a Google Chrome tab's URL contains ALL match substrings, focus that tab.
+# If a Safari tab's URL contains ALL match substrings, focus that tab.
 # Otherwise open <url> in a new tab (or new window if none exists).
 # If no match args are given, falls back to matching by <url> stripped of its query.
 
@@ -29,13 +29,13 @@ on run argv
     set targetURL to item 1 of argv
     set matchList to items 2 thru -1 of argv
 
-    tell application "Google Chrome"
-        -- у вкладок Chrome нет числового index, поэтому обходим по номерам
-        repeat with wi from 1 to (count of windows)
-            set w to window wi
-            repeat with ti from 1 to (count of tabs of w)
+    tell application "Safari"
+        activate
+
+        repeat with w in windows
+            repeat with t in tabs of w
                 try
-                    set tabURL to URL of tab ti of w
+                    set tabURL to URL of t
                     if tabURL is not missing value then
                         set ok to true
                         repeat with m in matchList
@@ -45,9 +45,8 @@ on run argv
                             end if
                         end repeat
                         if ok then
-                            set active tab index of w to ti
+                            set current tab of w to t
                             set index of w to 1
-                            activate
                             return
                         end if
                     end if
@@ -56,13 +55,13 @@ on run argv
         end repeat
 
         if (count of windows) = 0 then
-            make new window
-            set URL of active tab of front window to targetURL
+            make new document with properties {URL:targetURL}
         else
-            -- новая вкладка в Chrome сразу становится активной
-            tell front window to make new tab with properties {URL:targetURL}
+            tell window 1
+                set newTab to make new tab with properties {URL:targetURL}
+                set current tab to newTab
+            end tell
         end if
-        activate
     end tell
 end run
 APPLESCRIPT
