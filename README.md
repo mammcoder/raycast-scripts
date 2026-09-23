@@ -29,6 +29,11 @@
 | `jenkins chat`                        | -         | `jenkins-chat.sh`              |
 | `jenkins schedules`                   | -         | `jenkins-schedules.sh`         |
 | -                                     |           |                                |
+| `deploy delivery`                     | -         | `deploy-delivery.sh`           |
+| `deploy rewards`                      | -         | `deploy-rewards.sh`            |
+| `deploy bonuses`                      | -         | `deploy-bonuses.sh`            |
+| `deploy schedules`                    | -         | `deploy-schedules.sh`          |
+| -                                     |           |                                |
 | `log test`                            | `lt`      | `log-test.sh`                  |
 | `log prod`                            | `lp`      | `log-prod.sh`                  |
 | -                                     |           |                                |
@@ -42,6 +47,15 @@
 | `yandex tracker POOLING`              | `yp`      | `yandex-pooling-task.sh`       |
 | `yandex tracker внутренние работы`    | `yi`      | `yandex-tracker-int-work.sh`   |
 | `yandex tracker мои задачи`           | `ym`      | `yandex-tracker-my-tasks.sh`   |
+
+## Deploy
+
+Команды `deploy *` открывают новое окно Terminal и запускают в нём `lib/deploy.sh`
+(деплой на test). Окно не закрывается, по окончании играет звук.
+Нужны `JENKINS_LOGIN` и `JENKINS_TOKEN` в `~/.zshrc`.
+
+Новый сервис: `lib/deploy-service.sh <service> <git-ref>`, где `<service>` — имя
+джобы без префикса `deploy-` (совпадает с именем view в Jenkins).
 
 ## Добавить новую команду
 
