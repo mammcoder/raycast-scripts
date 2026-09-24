@@ -9,4 +9,4 @@
 # @raycast.icon 🧪
 # @raycast.aliases kt
 
-"$(dirname "$0")/lib/open-or-focus.sh" "https://akhq-test.int.vkusvill.ru/ui/docker-kafka-server/topic" "akhq-test.int.vkusvill.ru"
+"$(dirname "$0")/lib/open-or-focus.sh" "https://akhq.svc.vkusvill.ru/ui/test-common/topic" "akhq.svc.vkusvill.ru/ui/test-common"
